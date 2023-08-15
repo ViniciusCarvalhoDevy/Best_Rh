@@ -1,0 +1,15 @@
+<html>
+    <form action="{% url 'salvar_gerente' %}" method='post'>
+        {% csrf_token %}
+        {{form}}
+        <input type='submit' value="Cadastrar">
+    </form>
+
+    <div>
+        {% for gerente in gerentes %}
+        <a href="{% url 'index' %}">Voltar para a página inicial.</a><br/>  
+        <p>{{gerente.first_name}}</p>
+        <p>{{gerente.last_name}}</p>
+        {% endfor %}
+    </div>
+</html>

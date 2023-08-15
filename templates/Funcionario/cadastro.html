@@ -1,0 +1,14 @@
+<html>
+
+<form method='post'>
+{% csrf_token %}
+{{form}}
+<input type='submit' value='Cadastrar'>
+</form>
+{% if users is not None %}
+{% for user in users %}
+<h1>ID: {{user.pk}} Nome: {{user.username}}</h1>
+{% endfor %}
+
+{% endif %}
+</html>
